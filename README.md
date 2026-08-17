@@ -23,7 +23,7 @@ The project evaluates multiple classification algorithms, including:
 * **Random Forest Classifier**
 * **Gradient Boosting Classifier**
 
-Hyperparameter tuning is performed using **GridSearchCV** with stratified cross-validation.
+Hyperparameter tuning is performed using **RandomizedSearchCV** with stratified cross-validation.
 
 Model performance can be evaluated using:
 
@@ -46,11 +46,8 @@ The model uses the following features:
 
 | Feature           | Description                   |
 | ----------------- | ----------------------------- |
-| Gender            | Gender of the applicant       |
 | Married           | Applicant's marital status    |
 | Dependents        | Number of dependents          |
-| Education         | Graduate / Not Graduate       |
-| Self_Employed     | Employment type               |
 | ApplicantIncome   | Applicant's income            |
 | CoapplicantIncome | Co-applicant's income         |
 | LoanAmount        | Requested loan amount         |
@@ -70,59 +67,9 @@ loan-prediction/
 ├── models/
 │   └── model.pkl
 ├── requirements.txt
+├── loan_prediction.ipynb
 └── README.md
 ```
-
-## Installation
-
-Clone the repository:
-
-```bash
-git clone <repository-url>
-cd loan-prediction
-```
-
-Create a virtual environment:
-
-```bash
-python -m venv .venv
-```
-
-Activate it on Windows:
-
-```bash
-.venv\Scripts\activate
-```
-
-Install the dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-## Requirements
-
-A basic `requirements.txt` can contain:
-
-```text
-streamlit
-pandas
-numpy
-scikit-learn
-```
-
-Make sure the Scikit-learn version is compatible with the version used to train and serialize the model.
-
-## Running the Application
-
-Start the Streamlit application using:
-
-```bash
-streamlit run app.py
-```
-
-Streamlit will provide a local URL that can be opened in your browser.
-
 ## Prediction
 
 The application collects applicant information and converts the inputs into the same feature structure used during model training.

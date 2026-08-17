@@ -55,11 +55,8 @@ if submit:
 
 
     input_data = pd.DataFrame([{
-        'Gender': gender,
         'Married': married, 
         'Dependents': dependents, 
-        'Education': education, 
-        'Self_Employed': self_employed,
         'ApplicantIncome': applicant_income, 
         'CoapplicantIncome': coapplicant_income, 
         'LoanAmount': loan_amount,
